@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Une méne</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+        <h1>Génerateur de mèmes </h1>
+        <p>Créer votre mèmes avec les templates lassiques ou avec vos propres images</p>
+    </header>
+    <div class="main_container">
+         <div class="canvas-area">
+            <canvas class="Canvas" width="500" height="500"></canvas>
+        </div>
+        <div class="controls">
+            <div class="section">
+                <h3>Template Classiques</h3>
+                <div class="tempaltes">
+                    <div class="template" data-template="drake" style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4);">
+                      <div class="template-name">Drake</div>
+                   </div>
+                   <div class="template" data-template="boyfreind" style="background: linear-gradient(45deg, #a8e6cf, #ffd93d);">
+                     <div class="template-name">boyfreind</div>
+                   </div>
+                   <div class="template" data-template="brain" style="background: linear-gradient(45deg, #DF91A5, #C897C1);">
+                     <div class="template-name">Brain</div>
+                   </div>
+                   <div class="template " data-template="costum" style="background: linear-gradient(45deg, #81c784, #64b5f6);">
+                     <div class="template-name">Costum</div>
+                   </div>
+                </div>
+            </div>
+            <div class="section">
+              <h3>Votre image</h3>
+              <div class="lieux-texte" id="dragDropArea">
+                <p>déposez votre image ici<br>ou cliquez pour sélectionner</p>
+              </div>
+              <div class="file-upload">
+               <input type="file" id="imageUpload" accept="image/*">
+                <label for="imageUpload">Choisir une image</label>
+              </div>
+            </div>
+           <div class="section">
+            <h3>Textes</h3>
+            <input type="text" class="text-input" id="topText" placeholder="Texte du haut">
+            <input type="text" class="text-input" id="bottomText" placeholder="Texte du bas">
+            <div class="position-text">
+                <button class="position-btn" data-position="top-left">↖️</button>
+                <button class="position-btn active" data-position="top-center">⬆️</button>
+                <button class="position-btn" data-position="top-right">↗️</button>
+                <button class="position-btn" data-position="center-left">⬅️</button>
+                <button class="position-btn" data-position="center">⭕</button>
+                <button class="position-btn" data-position="center-right">➡️</button>
+                <button class="position-btn" data-position="bottom-left">↙️</button>
+                <button class="position-btn active" data-position="bottom-center">⬇️</button>
+                <button class="position-btn" data-position="bottom-right">↘️</button>
+           </div>
+           </div>
+           <div class="section">
+            <h3>Styles du texte</h3>
+            <label>Taille du Texte</label>
+            <input type="range" class="slider" id="fontSize" min="20" max="80" value="40">
+
+            <div class="couleurs">
+                <label>Couleur texte:</label>
+                <label>contour:</label>
+                <input type="color"  class="color-input" id="textColor" value="#ffffff">
+                <input type="color"  class="color-input" id="contourColor" value="#000000"> 
+            </div>
+            <label>Police:</label>
+            <select class="text-input" id="fontFamily">
+                <option value="Impact">Impact (Classique)</option>
+                <option value="Arial Black">Arial Black</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+            </select>
+           </div>
+           <div class="section">
+              <h3>Télécharger</h3><button class="btn btn-success" id="downloadBtn" style="width: 100%; margin-top: 10px;">Télécharger le Mème</button>
+              <button class="btn btn-primary" id="resetBtn" style="width: 100%; margin-top: 10px;"> Réinitialiser</button>
+          </div>
+        </div>
+    </div>
+  </div>   
+  <script src="index.js"></script>
+</body>
+</html>     
