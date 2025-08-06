@@ -43,6 +43,14 @@
                <input type="file" id="imageUpload" accept="image/*">
                 <label for="imageUpload">Choisir une image</label>
               </div>
+              <div class="image-controls">
+                <button class="crop-btn" onclick="openCropModal()" id="cropBtn" style="display: none;">
+                    ✂️ Recadrer
+                </button>
+                <button class="crop-btn" onclick="removeImage()" id="removeBtn" style="display: none;">
+                    🗑️ Supprimer
+                </button>
+              </div>
             </div>
            <div class="section">
             <h3>Textes</h3>
@@ -83,6 +91,26 @@
            <div class="section">
               <h3>Télécharger</h3><button class="btn btn-success" id="downloadBtn" style="width: 100%; margin-top: 10px;">Télécharger le Mème</button>
               <button class="btn btn-primary" id="resetBtn" style="width: 100%; margin-top: 10px;"> Réinitialiser</button>
+          </div>
+          <div class="crop-modal" id="cropModal">
+            <div class="crop-container">
+                <h3 style="text-align: center; margin-bottom: 20px; color: #333;">✂️ Recadrer votre image</h3>
+                <div class="crop-area" id="cropArea">
+                    <img id="cropImage" class="crop-image" alt="Image à recadrer">
+                    <div class="crop-overlay" id="cropOverlay">
+                        <div class="crop-selection" id="cropSelection">
+                            <div class="crop-handle nw"></div>
+                            <div class="crop-handle ne"></div>
+                            <div class="crop-handle sw"></div>
+                            <div class="crop-handle se"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="crop-buttons">
+                    <button class="btn btn-success" onclick="applyCrop()">✅ Appliquer</button>
+                    <button class="btn btn-primary" onclick="closeCropModal()">❌ Annuler</button>
+                </div>
+            </div>
           </div>
         </div>
     </div>

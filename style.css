@@ -219,6 +219,120 @@ body{
 .position-btn.active{
     background:  #3498db;
 }
+.image-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.crop-btn {
+    padding: 8px 16px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.crop-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+.crop-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.crop-container {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.crop-area {
+    position: relative;
+    max-width: 90vw;
+    max-height: 60vh;
+    margin: 0 auto 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+}
+
+.crop-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    background: #222;
+}
+
+
+.crop-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: move;
+}
+
+.crop-selection {
+    position: absolute;
+    border: 2px solid #3498db;
+    background: transparent;
+    cursor: move;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.crop-handle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #3498db;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.crop-handle.nw { top: -6px; left: -6px; cursor: nw-resize; }
+.crop-handle.ne { top: -6px; right: -6px; cursor: ne-resize; }
+.crop-handle.sw { bottom: -6px; left: -6px; cursor: sw-resize; }
+.crop-handle.se { bottom: -6px; right: -6px; cursor: se-resize; }
+
+.crop-buttons {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.crop-buttons .btn {
+    margin: 0 10px;
+}
  @media (max-width: 768px) {
     .main-content {
         grid-template-columns: 1fr;
